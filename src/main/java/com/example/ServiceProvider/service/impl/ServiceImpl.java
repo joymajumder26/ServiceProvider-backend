@@ -45,10 +45,12 @@ public class ServiceImpl implements ServiceService {
             serviceModel.setUuid(UUID.randomUUID().toString());
 
             serviceModel = serviceRepository.save(serviceModel);
+
             subCategoryModel = serviceModel.getSubCategory();
             districtAddressModel = serviceModel.getDistrictAddressModel();
             CategoryModel categoryModel = subCategoryModel.getCategoryModel();
             DivisionAddressModel divisionAddressModel = districtAddressModel.getDivisionAddressModel();
+
             CategoryResponse categoryResponse =
                     new CategoryResponse(categoryModel.getUuid(), categoryModel.getCategoryName(),categoryModel.getCreatedBy(),
                             categoryModel.getCreatedOn(),categoryModel.getLastUpdatedBy());
@@ -125,6 +127,7 @@ public class ServiceImpl implements ServiceService {
             serviceModel.setServiceName(serviceRequest.getServiceName());
 
             serviceModel = serviceRepository.save(serviceModel);
+
             SubCategoryModel subCategoryModel = serviceModel.getSubCategory();
             CategoryModel categoryModel = subCategoryModel.getCategoryModel();
 

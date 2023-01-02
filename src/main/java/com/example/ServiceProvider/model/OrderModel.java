@@ -19,5 +19,9 @@ public class OrderModel extends BaseModel {
 
     @ManyToOne
     private ServiceModel serviceModel;
+    @ManyToOne
+    private SubCategoryModel subCategory;
+    @ManyToOne
+    private DistrictAddressModel districtAddressModel;
 
 }

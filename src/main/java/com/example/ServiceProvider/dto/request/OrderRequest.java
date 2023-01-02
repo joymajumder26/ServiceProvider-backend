@@ -11,6 +11,8 @@ import lombok.NoArgsConstructor;
 public class OrderRequest {
     private String orderName;
     private String serviceUuid;
+    private String subCategoryUuid;
+    private String districtAddressUuid;
 
 
 }
